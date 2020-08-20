@@ -43,5 +43,13 @@ or QGC
 
 ***
 
+# Deploy model on companion computer
+1. imageset --(LabelImg)--> xml --(convert)--> csv --(convert)--> tfrecord --(as input)--> Tensorflow Object Detection API train
+  Got a lot of errors here, gave up. (Haven't try resize from 512 to 300 yet!)
+  
+2. imageset --(LabelImg)--> xml --(convert)--> VOC2007 --> train ssd --> get model's .pb --> get .pb and .pbtxt --(as model input)--> opencv.dnn
+  Also got a lot of errors here, but changed img size from 512 to 300 and train.py works. However, got suck results while training.
+
+
 ### References:
 https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoReceiver#linux
